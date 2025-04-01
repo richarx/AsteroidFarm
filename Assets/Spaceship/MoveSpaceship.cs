@@ -13,7 +13,7 @@ namespace Spaceship
         [SerializeField] private float rotationAcceleration;
         
         [Header("Movement")]
-        [SerializeField] private float acceleration;
+        [SerializeField] private float acceleration; //should be equals to => maxMoveSpeed * 10.0f
         [SerializeField] private float deceleration;
         [SerializeField] private float hyperDeceleration;
         [SerializeField] private float maxMoveSpeed;
