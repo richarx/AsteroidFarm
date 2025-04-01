@@ -40,7 +40,7 @@ namespace Asteroid
             if (!spawnFromTheRight)
                 direction *= -1.0f;
 
-            AsteroidMovement newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
+            AsteroidMovement newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity, transform);
             newAsteroid.Setup(direction);
         }
 
@@ -57,7 +57,7 @@ namespace Asteroid
             if (!spawnFromTheTop)
                 direction *= -1.0f;
 
-            AsteroidMovement newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
+            AsteroidMovement newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity, transform);
             newAsteroid.Setup(direction);
         }
     }
