@@ -4,13 +4,21 @@ namespace Spaceship
 {
     public class MoveSpaceship : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField] private Transform cursor;
         [SerializeField] private Transform rotationPivot;
+        [SerializeField] private SpaceshipAnimation spaceshipAnimation;
+        
+        [Header("Rotation")]
         [SerializeField] private float rotationAcceleration;
+        
+        [Header("Movement")]
         [SerializeField] private float acceleration;
         [SerializeField] private float deceleration;
         [SerializeField] private float hyperDeceleration;
         [SerializeField] private float maxMoveSpeed;
+        
+        [Header("Cursor Ranges")]
         [SerializeField] private float maxRange;
         [SerializeField] private float maxSlowRange;
 
@@ -21,6 +29,7 @@ namespace Spaceship
         {
             LookTowardsCursor();
             MoveForward();
+            spaceshipAnimation.UpdateSpaceshipVisuals(moveVelocity, rotationVelocity);
         }
 
         private void MoveForward()
