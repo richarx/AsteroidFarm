@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35ad0a795a27ed4185db25dddfb66a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 1
 --- !u!114 &4651944950708648925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bc3e7f8fdf5914ab7ff39ac6f7cbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 8
+  healthPoints: 6
   spriteRenderer: {fileID: 3776412890272097296}
   explosionPrefab: {fileID: 1613623997679361279, guid: 2dab7d7ea13acac46870816d0b2fe0a3, type: 3}
 --- !u!58 &8101054940028293747

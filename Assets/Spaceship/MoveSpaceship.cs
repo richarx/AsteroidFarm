@@ -66,6 +66,12 @@ namespace Spaceship
         public void SetLockState(bool state)
         {
             isLocked = state;
+
+            if (isLocked)
+            {
+                moveVelocity = Vector2.zero;
+                spaceshipAnimation.ResetBooster();
+            }
         }
 
         public void SetLookDirection(Vector2 direction)

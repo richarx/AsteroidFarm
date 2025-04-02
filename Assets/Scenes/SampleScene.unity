@@ -242,7 +242,7 @@ RectTransform:
   m_GameObject: {fileID: 665165720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1470261840}
@@ -404,7 +404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 2071452512314007286, guid: b7848feccf49b0c4cafc946bbb5a5db3, type: 3}
-  timeBetweenSpawn: 2.5
+  timeBetweenSpawn: 1.5
+  maxAsteroidCount: 50
 --- !u!114 &1332939033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,9 +944,9 @@ MonoBehaviour:
   acceleration: 45
   deceleration: 30
   hyperDeceleration: 80
-  maxMoveSpeed: 4.5
-  maxRange: 1.5
-  maxSlowRange: 1
+  maxMoveSpeed: 2.5
+  maxRange: 0.7
+  maxSlowRange: 0.1
 --- !u!4 &3090145571886779636
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,9 +1053,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03, y: 0}
+  m_Offset: {x: 0.14951578, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.085772276
 --- !u!114 &3722891433810187525
 MonoBehaviour:
   m_ObjectHideFlags: 0

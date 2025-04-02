@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Asteroid
 {
@@ -7,6 +6,7 @@ namespace Asteroid
     {
         [SerializeField] private AsteroidMovement asteroidPrefab;
         [SerializeField] private float timeBetweenSpawn;
+        [SerializeField] private int maxAsteroidCount;
         
         private const float horizontalLimit = 5.0f;
         private const float height = 5.75f;
@@ -18,7 +18,7 @@ namespace Asteroid
         
         private void Update()
         {
-            if (Time.time - spawnTimestamp >= timeBetweenSpawn)
+            if (transform.childCount < maxAsteroidCount && Time.time - spawnTimestamp >= timeBetweenSpawn)
             {
                 SpawnAsteroid();
                 spawnTimestamp = Time.time;

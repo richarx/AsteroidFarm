@@ -37,7 +37,7 @@ namespace Spaceship
             yield return Tools.Fade(blackScreen, fadeDuration, true);
 
             spaceship.transform.position = Vector2.zero;
-            cursor.transform.position = Vector2.zero;
+            cursor.transform.position = Vector2.zero + (Vector2.right * 0.5f);
             spaceship.SetLookDirection(Vector2.right);
             asteroidSpawner.ResetAsteroids();
 

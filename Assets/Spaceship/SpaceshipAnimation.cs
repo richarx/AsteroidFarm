@@ -45,5 +45,11 @@ namespace Spaceship
         {
             booster.Play(state ? "Booster_Idle" : "Booster_Off");
         }
+
+        public void ResetBooster()
+        {
+            SetBoosterState(boosterLeft, false);
+            SetBoosterState(boosterRight, false);
+        }
     }
 }
