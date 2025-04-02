@@ -6,17 +6,23 @@ namespace Asteroid
     public class AsteroidSpawner : MonoBehaviour
     {
         [SerializeField] private AsteroidMovement asteroidPrefab;
-
+        [SerializeField] private float timeBetweenSpawn;
+        
         private const float horizontalLimit = 5.0f;
         private const float height = 5.75f;
         
         private const float verticalLimit = 2.5f;
         private const float width = 10.0f;
+
+        private float spawnTimestamp;
         
         private void Update()
         {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Time.time - spawnTimestamp >= timeBetweenSpawn)
+            {
                 SpawnAsteroid();
+                spawnTimestamp = Time.time;
+            }
         }
 
         public void ResetAsteroids()
