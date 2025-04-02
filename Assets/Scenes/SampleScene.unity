@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.049439307, g: 0.07056931, b: 0.103773594, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 2071452512314007286, guid: b7848feccf49b0c4cafc946bbb5a5db3, type: 3}
-  timeBetweenSpawn: 1.5
+  timeBetweenSpawn: 1
   maxAsteroidCount: 50
 --- !u!114 &1332939033
 MonoBehaviour:
@@ -945,7 +945,7 @@ MonoBehaviour:
   deceleration: 30
   hyperDeceleration: 80
   maxMoveSpeed: 2.5
-  maxRange: 0.7
+  maxRange: 0.5
   maxSlowRange: 0.1
 --- !u!4 &3090145571886779636
 Transform:
@@ -1053,7 +1053,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14951578, y: 0}
+  m_Offset: {x: 0.15, y: 0}
   serializedVersion: 2
   m_Radius: 0.085772276
 --- !u!114 &3722891433810187525
