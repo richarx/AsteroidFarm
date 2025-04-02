@@ -143,6 +143,26 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Asteroid_Frame_1
     originalName: 
+    pivot: {x: 0.5, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 40
+      width: 30
+      height: 28
+    spriteID: 069a989eb56ded340a7a246eea5e478d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 40}
+  - name: Asteroid_Frame_2
+    originalName: 
     pivot: {x: 0.2, y: -1.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 10
       height: 10
-    spriteID: 069a989eb56ded340a7a246eea5e478d
+    spriteID: 27e42b915377aa84a903249d0cbd54c1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,7 +181,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 42, y: 4}
-  - name: Asteroid_Frame_2
+  - name: Asteroid_Frame_3
     originalName: 
     pivot: {x: 0.2, y: -1.1}
     alignment: 9
@@ -172,7 +192,7 @@ ScriptedImporter:
       y: 22
       width: 10
       height: 10
-    spriteID: 27e42b915377aa84a903249d0cbd54c1
+    spriteID: 516af40bdb0ed3a41b5c22342ca8afd2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,10 +221,10 @@ ScriptedImporter:
     - name: Asteroid_Frame_1
       frameIndex: 1
       cellRect:
-        x: 14
-        y: 11
-        width: 10
-        height: 10
+        x: 1
+        y: 2
+        width: 30
+        height: 28
       spriteId: 069a989eb56ded340a7a246eea5e478d
     - name: Asteroid_Frame_2
       frameIndex: 2
@@ -214,6 +234,14 @@ ScriptedImporter:
         width: 10
         height: 10
       spriteId: 27e42b915377aa84a903249d0cbd54c1
+    - name: Asteroid_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 14
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 516af40bdb0ed3a41b5c22342ca8afd2
     linkedCells: []
     parentIndex: -1
   platformSettings: []

@@ -19,6 +19,14 @@ namespace Asteroid
                 SpawnAsteroid();
         }
 
+        public void ResetAsteroids()
+        {
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                Destroy(transform.GetChild(i).gameObject);
+            }
+        }
+
         private void SpawnAsteroid()
         {
             if (Tools.RandomBool())

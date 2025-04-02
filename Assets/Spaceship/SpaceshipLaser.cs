@@ -1,3 +1,4 @@
+using Asteroid;
 using UnityEngine;
 
 namespace Spaceship
@@ -7,10 +8,29 @@ namespace Spaceship
         [SerializeField] private Transform asteroidHolder;
         [SerializeField] private SpriteRenderer laser;
         [SerializeField] private float maxRange;
-
+        [SerializeField] private int damage;
+        [SerializeField] private float timeBetweenDamage;
+        
+        private AsteroidTakeDamage previousTarget;
+        private float targetingTimestamp;
+        
         private void Update()
         {
             GameObject closestAsteroid = FindClosestAsteroid();
+
+            if (closestAsteroid != null && (previousTarget == null || closestAsteroid != previousTarget.gameObject))
+            {
+                previousTarget = closestAsteroid.GetComponent<AsteroidTakeDamage>();
+                targetingTimestamp = Time.time;
+            }
+            else if (closestAsteroid == null)
+                previousTarget = null;
+
+            if (previousTarget != null && Time.time - targetingTimestamp >= timeBetweenDamage)
+            {
+                previousTarget.TakeDamage(damage);
+                targetingTimestamp = Time.time;
+            }
 
             if (closestAsteroid != null)
                 DisplayLaser(closestAsteroid);

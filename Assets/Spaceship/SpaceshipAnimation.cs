@@ -23,8 +23,6 @@ namespace Spaceship
         
         public void UpdateSpaceshipVisuals(Vector2 moveVelocity, float rotationVelocity)
         {
-            Debug.Log($"rotation : {rotationVelocity}");
-
             if (Mathf.Abs(rotationVelocity) >= rotationSpeedThreshold)
             {
                 bool isMovingLeft = Mathf.Sign(rotationVelocity) >= 0;

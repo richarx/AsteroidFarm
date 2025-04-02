@@ -24,9 +24,14 @@ namespace Spaceship
 
         private float rotationVelocity;
         private Vector2 moveVelocity;
+
+        private bool isLocked;
         
         private void LateUpdate()
         {
+            if (isLocked)
+                return;
+            
             LookTowardsCursor();
             MoveForward();
             spaceshipAnimation.UpdateSpaceshipVisuals(moveVelocity, rotationVelocity);
@@ -56,6 +61,16 @@ namespace Spaceship
             Vector2 targetDirection = Vector2.right.AddAngleToDirection(targetAngle);
 
             rotationPivot.rotation = targetDirection.ToRotation();
+        }
+
+        public void SetLockState(bool state)
+        {
+            isLocked = state;
+        }
+
+        public void SetLookDirection(Vector2 direction)
+        {
+            rotationPivot.rotation = direction.ToRotation();
         }
     }
 }
