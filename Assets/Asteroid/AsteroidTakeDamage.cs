@@ -6,6 +6,7 @@ namespace Asteroid
     {
         [SerializeField] private int healthPoints;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private GameObject loot;
         [SerializeField] private GameObject explosionPrefab;
 
         private SqueezeAndStretch squeezeAndStretch;
@@ -40,7 +41,9 @@ namespace Asteroid
 
         private void DestroyAsteroid()
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Vector2 position = transform.position;
+            Instantiate(explosionPrefab, position, Quaternion.identity);
+            Instantiate(loot, position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -163,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 6
   spriteRenderer: {fileID: 3776412890272097296}
+  loot: {fileID: 7828093627712461605, guid: ee6398e83e96e99418eaf1b00ec16a63, type: 3}
   explosionPrefab: {fileID: 1613623997679361279, guid: 2dab7d7ea13acac46870816d0b2fe0a3, type: 3}
 --- !u!58 &8101054940028293747
 CircleCollider2D:
