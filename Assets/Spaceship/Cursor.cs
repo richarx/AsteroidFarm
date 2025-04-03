@@ -16,14 +16,17 @@ namespace Spaceship
         private void Update()
         {
             if (Input.GetMouseButton(0))
-            {
-                Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.value);
+                MoveCursorToPosition(mainCamera.ScreenToWorldPoint(Mouse.current.position.value));
+            else if (Input.touchCount > 0)
+                MoveCursorToPosition(Input.GetTouch(0).position);
+        }
 
-                mousePosition.x = Mathf.Clamp(mousePosition.x, -8.75f, 8.75f);
-                mousePosition.y = Mathf.Clamp(mousePosition.y, -4.85f, 4.85f);
+        private void MoveCursorToPosition(Vector2 position)
+        {
+            position.x = Mathf.Clamp(position.x, -8.75f, 8.75f);
+            position.y = Mathf.Clamp(position.y, -4.85f, 4.85f);
                 
-                transform.position = mousePosition;
-            }
+            transform.position = position;
         }
     }
 }
