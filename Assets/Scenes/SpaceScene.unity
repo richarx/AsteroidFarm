@@ -1044,6 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squeezeAndStretch: {fileID: 8912993956094935413}
+  lootVfx: {fileID: 5413252735318819521, guid: 6875d7f309fd89f47b0566a306508eee, type: 3}
 --- !u!1 &2122591241
 GameObject:
   m_ObjectHideFlags: 0
