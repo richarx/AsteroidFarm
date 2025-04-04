@@ -1,32 +1,32 @@
 using UnityEngine;
 
-namespace Asteroid
+namespace Comet
 {
-    public class AsteroidSpawner : MonoBehaviour
+    public class CometSpawner : MonoBehaviour
     {
-        [SerializeField] private AsteroidMovement asteroidPrefab;
+        [SerializeField] private CometMovement cometPrefab;
         [SerializeField] private Transform parentPivot;
         [SerializeField] private float timeBetweenSpawn;
-        [SerializeField] private int maxAsteroidCount;
+        [SerializeField] private float spawnAngle;
         
         private const float horizontalLimit = 5.0f;
         private const float height = 5.75f;
         
         private const float verticalLimit = 2.5f;
         private const float width = 10.0f;
-
+        
         private float spawnTimestamp;
         
         private void Update()
         {
-            if (parentPivot.childCount < maxAsteroidCount && Time.time - spawnTimestamp >= timeBetweenSpawn)
+            if (Time.time - spawnTimestamp >= timeBetweenSpawn)
             {
-                SpawnAsteroid();
+                SpawnComet();
                 spawnTimestamp = Time.time;
             }
         }
 
-        public void ResetAsteroids()
+        public void ResetComets()
         {
             for (int i = parentPivot.childCount - 1; i >= 0; i--)
             {
@@ -34,12 +34,14 @@ namespace Asteroid
             }
         }
 
-        private void SpawnAsteroid()
+        private void SpawnComet()
         {
+            /*
             if (Tools.RandomBool())
                 SpawnVertical();
             else
-                SpawnHorizontal();
+            */
+            SpawnHorizontal();
         }
 
         private void SpawnHorizontal()
@@ -50,13 +52,13 @@ namespace Asteroid
             float spawnY = Random.Range(-verticalLimit, verticalLimit);
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
-            Vector2 direction = Vector2.left.AddRandomAngleToDirection(-45.0f, 45.0f);
+            Vector2 direction = Vector2.left.AddRandomAngleToDirection(-spawnAngle, spawnAngle);
 
             if (!spawnFromTheRight)
                 direction *= -1.0f;
 
-            AsteroidMovement newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity, parentPivot);
-            newAsteroid.Setup(direction);
+            CometMovement cometMovement = Instantiate(cometPrefab, spawnPosition, Quaternion.identity, parentPivot);
+            cometMovement.Setup(direction);
         }
 
         private void SpawnVertical()
@@ -67,13 +69,13 @@ namespace Asteroid
             float spawnY = spawnFromTheTop ? height : -height;
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
-            Vector2 direction = Vector2.down.AddRandomAngleToDirection(-45.0f, 45.0f);
+            Vector2 direction = Vector2.down.AddRandomAngleToDirection(-spawnAngle, spawnAngle);
 
             if (!spawnFromTheTop)
                 direction *= -1.0f;
 
-            AsteroidMovement newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity, parentPivot);
-            newAsteroid.Setup(direction);
+            CometMovement cometMovement = Instantiate(cometPrefab, spawnPosition, Quaternion.identity, parentPivot);
+            cometMovement.Setup(direction);
         }
     }
 }

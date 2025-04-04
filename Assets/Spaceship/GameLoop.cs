@@ -1,5 +1,6 @@
 using System.Collections;
 using Asteroid;
+using Comet;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ namespace Spaceship
         public static GameLoop instance;
 
         private AsteroidSpawner asteroidSpawner;
+        private CometSpawner cometSpawner;
 
         private bool isPlayingLoosingAnimation;
 
@@ -22,6 +24,7 @@ namespace Spaceship
         {
             instance = this;
             asteroidSpawner = GetComponent<AsteroidSpawner>();
+            cometSpawner = GetComponent<CometSpawner>();
         }
 
         public void LooseGame()
@@ -40,6 +43,7 @@ namespace Spaceship
             cursor.transform.position = Vector2.zero + (Vector2.right * 0.5f);
             spaceship.SetLookDirection(Vector2.right);
             asteroidSpawner.ResetAsteroids();
+            cometSpawner.ResetComets();
 
             yield return Tools.Fade(blackScreen, fadeDuration * 2.0f, false);
 
